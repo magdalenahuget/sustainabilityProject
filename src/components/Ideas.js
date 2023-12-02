@@ -1,35 +1,44 @@
+import { useState } from 'react';
 import Idea from './Idea';
+import data from '../database/data';
 
 const Ideas = () => {
-    const data = [
-        {
-            title: 'Title-1',
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            img: 'https://static.boredpanda.com/blog/wp-content/uploads/2014/07/plastic-bottles-recycling-ideas-11.jpg',
-        },
-        {
-            title: 'Title-2',
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            img: 'https://cdn.rwd.group/coda-plastics.co.uk/img/jpg/blog/c3ab6d9f1dbda82ae31b7819303d5516.jpg',
-        },
-        {
-            title: 'Title-3',
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            img: 'https://www.nspackaging.com/wp-content/uploads/sites/4/2019/03/shutterstock_1492626947.jpg',
-        },
-    ];
+    const [search, setSearch] = useState(data);
+
+    const getIdeasFilteredByTitle = (word) => {
+        return search.filter((item) => item.title.toLowerCase().includes(word));
+    };
+
+    const getFilteredIdeas = (e) => {
+        const inputSearch = e.target.value.toLowerCase();
+
+        if (!inputSearch) {
+            setSearch(data);
+            return;
+        }
+        const dataFiltered = getIdeasFilteredByTitle(inputSearch);
+        setSearch(dataFiltered);
+    };
+
+    const handleModal = () => {
+        console.log(`Testowa funkcja dla Modal Window`);
+    };
 
     return (
         <div className="ideas">
             <div className="ideas-search">
-                <input className="ideas-input" type="text" />
+                <input
+                    className="ideas-input"
+                    type="text"
+                    placeholder="Search by title"
+                    onChange={getFilteredIdeas}
+                />
             </div>
-            {data.map((item, index) => (
-                <Idea key={index} {...item} />
+            {search.map((item, index) => (
+                <Idea key={index} {...item} handleModal={handleModal} />
             ))}
         </div>
     );
 };
+
+export default Ideas;
