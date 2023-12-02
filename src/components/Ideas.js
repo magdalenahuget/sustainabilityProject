@@ -24,6 +24,9 @@ const Ideas = () => {
 
     return (
         <div className="ideas">
+            <div className="ideas-search">
+                <input className="ideas-input" type="text" />
+            </div>
             {data.map((item, index) => (
                 <Idea key={index} {...item} />
             ))}
