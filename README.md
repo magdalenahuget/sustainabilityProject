@@ -1,4 +1,4 @@
-# DEVELOPMENT BRANCH
+# Application under development
 
 # Getting Started with Create React App
 
