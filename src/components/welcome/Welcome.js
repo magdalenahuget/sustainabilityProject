@@ -1,7 +1,14 @@
 import React from 'react';
+import WelcomeImgComponent from './WelcomeImgComponent';
+import WelcomeIntroductionComponent from './WelcomeIntroductionComponent';
 
-function Welcome(){
-    return <h1>Welcome</h1>
+function Welcome() {
+
+    return (<><div className='welcome'>
+        <WelcomeIntroductionComponent />
+        <WelcomeImgComponent />
+    </div>
+    </>)
 }
 
 
