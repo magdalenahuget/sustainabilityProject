@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/header/Header";
+import Ideas from "./components/Ideas";
+import Welcome from "./components/Welcome";
+import Contact from "./components/Contact";
+import About from "./components/About";
+
+import { useState } from "react";
 
 function App() {
+  const [content, setContent] = useState(<Welcome/>);
+  const [menuChoices, setMenuChoices] = useState([
+    {element:<Welcome/>, text:'WELCOME', active:false},
+    {element:<Ideas/>, text:'IDEAS', active:false},
+    {element:<About/>, text:'ABOUT US', active:false},
+    {element:<Contact/>, text:'CONTACT', active:false}
+  ]);
+
+  function changePage(event) {
+    const newChoices = [...menuChoices];
+    newChoices.forEach(choice => choice.active = false);
+    const choice = newChoices.find(choice => choice.text === event.target.textContent);
+    choice.active = true;
+    setContent(choice.elemet);
+    setMenuChoices(newChoices);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Header menuChoices={menuChoices} changePage={(e) => changePage(e)} />
+        <div id="content">
+          { content }
+        </div>
+      </div>
   );
 }
-
 export default App;
