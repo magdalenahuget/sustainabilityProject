@@ -41,12 +41,11 @@ function Contact({ formpopup, workshopTitle }) {
                             <InputField
                                 onBlure={formik.handleBlur}
                                 touched={formik.touched[data.name]}
-                                className={'input-error'}
+                                className={"input-error"}
                                 error={formik.errors}
                                 onChange={formik.handleChange}
                                 value={formik.values}
-                                id={data.name}
-                                key={index}
+                                id={data.name} key={index}
                                 type={data.name}
                                 label={data.label}
                                 formpopup={formpopup}

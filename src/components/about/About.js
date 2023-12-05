@@ -1,5 +1,6 @@
 import dataAbout from '../../database/dataAbout';
 import AboutDetail from './AboutDetail';
+import './About.css'
 
 function About() {
     return (<>
@@ -11,5 +12,4 @@ function About() {
         </>
     )
 }
-
 export default About

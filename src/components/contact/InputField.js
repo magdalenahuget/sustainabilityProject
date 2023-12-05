@@ -1,5 +1,5 @@
 function InputField(props) {
-    const {key, type, label, values, onChange, className, error, touched, formpopup, workshopTitle,} = props;
+    const {onBlure, touched,  className,error,onChange,values, key, type, label,  formpopup, workshopTitle } = props;
 
     const defaultContent = () => {
         if (formpopup && type === 'subject') {
@@ -14,18 +14,10 @@ function InputField(props) {
     return (
         <>
             <label htmlFor={type}>{label}</label>
-            <input
-                className={error[type] ? className : ''}
-                onChange={onChange}
-                value={defaultContent()}
-                id={type}
-                key={key}
-                type={type}
-                placeholder={label}
-            ></input>
-            {error[type] && <p className="error">{error[type]}</p>}
+            <input className={error[type] && touched ? className : ""} onBlur={onBlure} onChange={onChange}   value={defaultContent()} id={type} key={key} type={type} placeholder={label}></input>
+            {error[type] && touched && <p className="error">{error[type]}</p>}
         </>
-    );
+    )
 }
 
 export default InputField;
