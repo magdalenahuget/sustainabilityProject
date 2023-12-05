@@ -39,6 +39,7 @@ function Contact({ formpopup }) {
                     {formData &&
                         formData.map((data, index) => (
                             <InputField
+                                onBlure={formik.handleBlur}
                                 touched={formik.touched[data.name]}
                                 className={'input-error'}
                                 error={formik.errors}
