@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { useState } from 'react';
 import basicSchema from '.';
 
-function Contact({ formpopup }) {
+function Contact({ formpopup, workshopTitle }) {
     const [formData, setFormData] = useState([
         { name: 'firstName', label: 'Name', value: '' },
         { name: 'lastName', label: 'Last name', value: '' },
@@ -39,6 +39,7 @@ function Contact({ formpopup }) {
                     {formData &&
                         formData.map((data, index) => (
                             <InputField
+                                onBlure={formik.handleBlur}
                                 touched={formik.touched[data.name]}
                                 className={'input-error'}
                                 error={formik.errors}
@@ -48,6 +49,8 @@ function Contact({ formpopup }) {
                                 key={index}
                                 type={data.name}
                                 label={data.label}
+                                formpopup={formpopup}
+                                workshopTitle={workshopTitle}
                             ></InputField>
                         ))}
                 </div>

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import FormPopup from '../../components/workshops/FormPopup';
 
-const Workshop = ({ img, title, date, place, topics, description, info }) => {
+const Workshop = ({img, title, date, place, topics, description, info}) => {
     const [modal, setModal] = useState(false);
 
     const handleSubmit = () => {
@@ -28,15 +28,20 @@ const Workshop = ({ img, title, date, place, topics, description, info }) => {
     return (
         <div className="workshop">
             <div className="workshop-wrapper">
-                <img className="workshop-img" src={img} alt="{title}" />
+                <img className="workshop-img" src={img} alt="{title}"/>
             </div>
             <div className="text-wrapper">
                 {setWorkshopContent()}
-                <button type="submit" className="workshop-btn" onClick={() => setModal(true)}>
+                <button type="submit" className="workshop-btn" onClick={() => setModal({isOpen: true})}>
                     REGISTER
                 </button>
             </div>
-            <FormPopup modal={modal} setModal={setModal} handleSubmit={handleSubmit} />
+            <FormPopup
+                modal={modal}
+                setModal={setModal}
+                handleSubmit={handleSubmit}
+                workshopTitle={`${title}-${date}-${place}`}
+            />
         </div>
     );
 };
