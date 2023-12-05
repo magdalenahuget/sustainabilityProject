@@ -7,39 +7,43 @@
     aspect-ratio: 5/4;
     justify-content: center;
     align-items: center;
-    margin: 0.2em;
     border-radius: 7px;
     overflow: hidden;
     cursor: pointer;
     border: 2px var(--color-dark) solid;
+    margin: 0.7em;
 }
 
-.image-wrapper{
-    width: 250%;
+.image-wrapper {
+    width: 100%;
     height: 100%;
     background-size: cover;
+    background-position: center;
 }
 
-.idea-content{
+.idea-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    width: 300%;
     margin: 0.5em 1em;
 }
-.idea-title{
+
+.idea-title {
     margin: 0.5em 0;
     text-align: left;
     font-size: x-large;
-    height: 10%;
+    min-height: 10%;
 }
-.idea-description{
+
+.idea-description {
     font-size: small;
     text-align: justify;
     height: 50%;
 }
 
-.idea-btn{
+.idea-btn {
     margin: 1em 0;
     background-color: var(--color-gray);
     border-radius: 10px;
@@ -49,29 +53,34 @@
     font-size: 17px;
     padding: 0.5em 0;
 }
+
 .idea-btn:hover {
-    background:linear-gradient(to bottom, var(--color-green) 5%, var(--color-darkgreen) 100%);
+    background: linear-gradient(to bottom, var(--color-green) 5%, var(--color-darkgreen) 100%);
     background-color: var(--color-greenyellow);
 }
+
 .idea-btn:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
-@media only screen and (min-width: 1000px) {
-    .idea {
-        margin: 1em;
-    }
-}
-
-@media only screen and (min-width: 700px) {
+@media only screen and (max-width: 1260px) {
     .idea {
         margin: 0.4em;
+        aspect-ratio: 4/5;
     }
 }
 
 @media only screen and (max-width: 300px) {
     .idea {
-        aspect-ratio: 3/5;
+        aspect-ratio: 9/20;
+    }
+
+    .idea-content {
+        justify-content: flex-start;
+    }
+
+    .idea-description {
+        height: 70%;
     }
 }
