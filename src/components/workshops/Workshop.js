@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import FormPopup from '../../components/workshops/FormPopup';
+import './Workshop.css'
 
 const Workshop = ({img, title, date, place, topics, description, info}) => {
     const [modal, setModal] = useState(false);
