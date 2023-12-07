@@ -1,10 +1,11 @@
 import "./AboutDetails.css";
 
-function AboutDetail({ img, title, description }) {
+function AboutDetail({img, title, description}) {
     return (
         <>
             <div className="about-detail">
-                <div className="image-wrapper" style={{ backgroundImage: `url(${img})` }}>
+                <div className="image-wrapper" style={{backgroundImage: `url(${img})`}}>
+
                     <div className="about-decoration">
                         <div className="about-content">
                             <i></i>
