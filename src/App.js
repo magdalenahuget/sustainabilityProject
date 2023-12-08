@@ -53,6 +53,7 @@ function App() {
         setContent(choice.element);
         setMenuChoices(newChoices);
         sessionStorage.setItem("currentContent", menuChoices.find(choice => choice.active).text);
+
     }
 
     return (

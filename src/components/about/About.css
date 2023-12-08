@@ -39,6 +39,10 @@
     cursor: pointer;
 }
 
+.next {
+    right: 10%;
+}
+
 .previous {
     position: absolute;
     top: 42%;
