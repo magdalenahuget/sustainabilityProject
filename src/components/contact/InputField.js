@@ -1,11 +1,18 @@
-import {useState} from "react";
-
+import {useState} from 'react';
 
 function InputField(props) {
-
-
-    const {onBlure, touched, error, onChange, values, key, type, label, formpopup, workshopTitle} = props;
-
+    const {
+        onBlure,
+        touched,
+        error,
+        onChange,
+        values,
+        index,
+        type,
+        label,
+        formpopup,
+        workshopTitle,
+    } = props;
 
     const defaultContent = () => {
         if (formpopup && type === 'subject') {
@@ -20,26 +27,38 @@ function InputField(props) {
     if (type === 'message') {
         return (
             <>
-                <div className='contact-input-wrapper' id={type + '-contact'}>
-            <textarea onBlur={onBlure} onChange={onChange} value={defaultContent()} id={type} key={key} type={type}
-                      placeholder={label}>
-            </textarea>
+                <div className="contact-input-wrapper" id={type + '-contact'}>
+          <textarea
+              onBlur={onBlure}
+              onChange={onChange}
+              value={defaultContent()}
+              id={type}
+              key={index}
+              type={type}
+              placeholder={label}
+          ></textarea>
                     {error[type] && touched && <p className="error">{error[type]}</p>}
                 </div>
             </>
-        )
+        );
     }
 
     return (
         <>
-            <div className='contact-input-wrapper' id={type + '-contact'}>
-                <input onBlur={onBlure} onChange={onChange} value={defaultContent()} id={type} key={key} type={type}
-                       placeholder={label}>
-                </input>
+            <div className="contact-input-wrapper" id={type + '-contact'}>
+                <input
+                    onBlur={onBlure}
+                    onChange={onChange}
+                    value={defaultContent()}
+                    id={type}
+                    key={index}
+                    type={type}
+                    placeholder={label}
+                ></input>
                 {error[type] && touched && <p className="error">{error[type]}</p>}
             </div>
         </>
-    )
+    );
 }
 
 export default InputField;
