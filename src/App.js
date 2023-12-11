@@ -19,12 +19,11 @@ function App() {
     const [content, setContent] = useState(findContent());
 
     useEffect(() => {
-        sessionStorage.setItem("currentContent", menuChoices.find(choice => choice.active).text);
         const newChoices = [...menuChoices];
         newChoices.forEach((choice) => (choice.active = false));
         newChoices.find((choice) => choice.element === content).active = true;
         setMenuChoices(newChoices);
-    });
+    }, [content]);
 
     function findContent() {
         const text = sessionStorage.getItem("currentContent");
