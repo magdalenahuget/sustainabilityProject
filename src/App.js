@@ -23,14 +23,12 @@ function App() {
         newChoices.forEach((choice) => (choice.active = false));
         newChoices.find((choice) => choice.element === content).active = true;
         setMenuChoices(newChoices);
-    }, [content, menuChoices]);
+        sessionStorage.setItem("currentContent", menuChoices.find(choice => choice.active).text);
+    }, [content]);
 
     function findContent() {
         const text = sessionStorage.getItem("currentContent");
-        return menuChoices.find(
-            (choice) => (text === null)
-                ? choice.active
-                : choice.text === text).element;
+        return menuChoices.find((choice) => (text === null) ? choice.active : choice.text === text).element;
     }
 
     function changePage(text) {
