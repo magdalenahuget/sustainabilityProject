@@ -54,6 +54,12 @@ and use it as a starting point for your own project, or to learn from the code.
 
 Project is created with:
 
+* Node.js 18.14.2
+* React 18.2.0
+* Javascript
+* CSS4
+* HTML5
+* IntelliJ IDEA 2023.1
 
 ## Setup
 
