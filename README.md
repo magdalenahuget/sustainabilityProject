@@ -1,6 +1,6 @@
 # GREEN WEEK
 
-![](greenWeek.gif)
+![](readmeSources/greenWeek.gif)
 
 ## Project aim
 
@@ -28,11 +28,11 @@ also provides them with a pleasant and memorable experience.
 
 ## Features
 
-![](responsive.gif)
+![](readmeSources/responsive.gif)
 
 ### Form validation
 
-![](form.gif)
+![](readmeSources/form.gif)
 
 ### Pop-ups
 
@@ -40,7 +40,7 @@ also provides them with a pleasant and memorable experience.
 
 ### Responsiveness
 
-![](responsive.gif)
+![](readmeSources/responsive.gif)
 
 ## Project status
 
