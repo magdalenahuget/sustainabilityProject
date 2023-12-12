@@ -16,7 +16,7 @@ also provides them with a pleasant and memorable experience.
 * [To do](#to-do)
 * [Features](#features)
 * [Project status](#project-status)
-* [Technologies](#technologies)
+* [Technologies](#technologies-and-tools)
 * [Setup](#setup)
 
 ## To do
@@ -36,7 +36,7 @@ also provides them with a pleasant and memorable experience.
 
 ### Pop-ups
 
-![](popups.gif)
+![](readmeSources/popups.gif)
 
 ### Responsiveness
 
@@ -50,7 +50,7 @@ any critical issues that arise, we do not plan to add any new features or accept
 Thank you for your interest in this project. We hope that you find it useful. Please feel free to fork this repository
 and use it as a starting point for your own project, or to learn from the code.
 
-## Technologies
+## Technologies and tools
 
 Project is created with:
 
