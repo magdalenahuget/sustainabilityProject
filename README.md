@@ -1,5 +1,9 @@
 # GREEN WEEK
 
+This project is deployed and you can access the live version by clicking [here](https://sustainability-project-vert.vercel.app/).
+
+If you want to check it out locally, follow the instructions below.
+
 ![](readmeSources/greenWeek.gif)
 
 ## Project aim
